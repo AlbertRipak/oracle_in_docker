@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  database:
+    image: "oracle/database:21.3.0-xe"
+    container_name: "oracle21xe-cf"
+    ports:
+      - "1522:1521"
+      - "5501:5500"
+    environment:
+      - ORACLE_PWD=${ORACLE_PWD}
+    volumes:
+      - M:\Docker\oracle\data:/opt/oracle/oradata
